@@ -1,0 +1,14 @@
+[workspace]
+members = [
+    "contract",
+    "tests",
+]
+
+default-members = [
+    "contract",
+    "tests",
+]
+
+[profile.release]
+codegen-units = 1
+lto = true
