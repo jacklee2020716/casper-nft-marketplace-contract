@@ -1,0 +1,19 @@
+<mxfile host="65bd71144e">
+    <diagram id="zXyRrHAtMcjPd8mT04C7" name="Page-1">
+        <mxGraphModel dx="400" dy="567" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="Order" style="swimlane;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="90" width="270" height="290" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="offerer:AccountHash" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="3">
+                    <mxGeometry x="100" y="30" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Text" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="3">
+                    <mxGeometry x="105" y="60" width="60" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

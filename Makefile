@@ -7,7 +7,6 @@ build-contract:
 
 test: build-contract
 	mkdir -p tests/wasm
-	ln -s ../../target/wasm32-unknown-unknown/release/contract.wasm tests/wasm/contract.wasm
 	cd tests && cargo test
 
 clippy:

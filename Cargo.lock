@@ -246,11 +246,12 @@ dependencies = [
 ]
 
 [[package]]
-name = "contract"
-version = "0.1.0"
+name = "contract-utils"
+version = "0.1.1"
 dependencies = [
  "casper-contract",
  "casper-types",
+ "hex",
 ]
 
 [[package]]
@@ -647,6 +648,15 @@ dependencies = [
  "cfg-if 1.0.0",
  "serde",
  "value-bag",
+]
+
+[[package]]
+name = "marketplace"
+version = "0.1.0"
+dependencies = [
+ "casper-contract",
+ "casper-types",
+ "contract-utils",
 ]
 
 [[package]]
