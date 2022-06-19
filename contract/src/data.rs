@@ -1,5 +1,8 @@
-use casper_types::U256;
+use casper_contract::unwrap_or_revert::UnwrapOrRevert;
+use casper_types::{account::AccountHash, U256};
 use contract_utils::{key_and_value_to_str, Dict};
+
+use crate::libs::Order;
 
 const ORDERS_DICT: &str = "orders";
 
@@ -18,18 +21,20 @@ impl Orders {
         Dict::init(ORDERS_DICT)
     }
 
-    pub fn get(&self, account: &Key, schedule_time: Time) -> Option<bool> {
-        self.dict
-            .get(&key_and_value_to_str(account, &schedule_time))
+    fn account_hash_and_value_to_str(&self, offerer: AccountHash, start_time: Time) -> String {
+        key_and_value_to_str(&Key::from(account), &schedule_time)
     }
 
-    pub fn set(&self, account: &Key, schedule_time: Time, claimed: bool) {
+    pub fn get(&self, offerer: AccountHash, start_time: Time) -> Order {
         self.dict
-            .set(&key_and_value_to_str(account, &schedule_time), claimed);
+            .get(&self.account_hash_and_value_to_str(offerer, start_time))
+            .unwrap_or_revert()
     }
 
-    pub fn remove(&self, account: &Key, schedule_time: Time) {
-        self.dict
-            .remove::<U256>(&key_and_value_to_str(account, &schedule_time));
+    pub fn set(&self, offerer: AccountHash, start_time: Time, order: Order) {
+        self.dict.set(
+            &self.account_hash_and_value_to_str(offerer, start_time),
+            order,
+        );
     }
 }

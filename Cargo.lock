@@ -215,6 +215,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "casper_types_derive"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1185d558597a7985e936c1e312810e46d3904888b298635f78370b729055fa28"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "cc"
 version = "1.0.73"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -654,9 +665,13 @@ dependencies = [
 name = "marketplace"
 version = "0.1.0"
 dependencies = [
+ "base64",
  "casper-contract",
  "casper-types",
+ "casper_types_derive",
  "contract-utils",
+ "hex",
+ "tiny-keccak",
 ]
 
 [[package]]
@@ -1205,6 +1220,15 @@ dependencies = [
  "libc",
  "wasi 0.10.0+wasi-snapshot-preview1",
  "winapi",
+]
+
+[[package]]
+name = "tiny-keccak"
+version = "2.0.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2c9d3793400a45f954c52e73d068316d76b6f4e36977e3fcebb13a2721e80237"
+dependencies = [
+ "crunchy",
 ]
 
 [[package]]

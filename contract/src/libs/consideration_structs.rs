@@ -15,8 +15,8 @@ use super::consideration_enums::{Asset, OrderRouteType, OrderStatus, OrderType};
 /// be received by their respective recipient.
 pub struct Order {
     pub offerer: AccountHash,
-    pub offers: Vec<Asset>,
-    pub considerations: BTreeMap<AccountHash, Asset>,
+    pub offer: Asset,
+    pub bids: BTreeMap<AccountHash, Asset>,
     pub order_route_type: OrderRouteType,
     pub start_time: Time,
     pub end_time: Time,
